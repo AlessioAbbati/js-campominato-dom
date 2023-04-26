@@ -49,13 +49,13 @@ function createGrid(nCells, eleContainer) {
             console.log(this);
             // console.log('Hai cliccato ls cella ' + this.innerHTML)
             // this.classList.toggle('clicked');
-            if(numRandom.includes(i + 1)){
+            if (numRandom.includes(i)) {
                 console.log('Hai perso')
                 this.classList.toggle('bombs');
                 eleText.classList.add('text')
             }
 
-             else{
+            else {
                 this.classList.toggle('clicked');
                 this.classList.toggle('blue');
                 point++;
@@ -68,12 +68,12 @@ function createGrid(nCells, eleContainer) {
 
 //Genero 16 numeri casuali
 getRandom(1, 100, numRandom)
-function getRandom (min, max, numbers) {
+function getRandom(min, max, numbers) {
     while (numbers.length < 16) {
-      let randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
-      if (!numbers.includes(randomNumber)) {
-    numbers.push(randomNumber);
-  }
-}
-console.log(numbers);
+        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (!numbers.includes(randomNumber)) {
+            numbers.push(randomNumber);
+        }
+    }
+    console.log(numbers);
 }
