@@ -3,6 +3,7 @@ const eleHelp = document.querySelector('.help');
 const eleGrid = document.querySelector('.grid');
 const btnPlay = document.querySelector('#play');
 const selectLevel = document.querySelector('#level');
+const numRandom = []
 
 btnPlay.addEventListener('click', function () {
     // nascondere il messaggio
@@ -13,18 +14,6 @@ btnPlay.addEventListener('click', function () {
 
     // leggere il livello per determinare il numero di celle
     const nCells = parseInt(selectLevel.value);
-
-    // switch (selectLevel.value) {
-    // 	case 'easy':
-    // 		createGrid(100, eleGrid);
-    // 		break;
-    // 	case 'hard':
-    // 		createGrid(81, eleGrid);
-    // 		break;
-    // 	case 'crazy':
-    // 		createGrid(49, eleGrid);
-    // 		break;
-    // }
 
     // aggiustare lo style della griglia
     eleGrid.style.setProperty('--sideSquare', Math.sqrt(nCells));
@@ -51,8 +40,6 @@ function createGrid(nCells, eleContainer) {
         const eleCell = document.createElement('div');
         eleCell.innerHTML = i;
         eleCell.classList.add('cell');
-        // eleCell.style.width = `calc(100% / ${side})`;
-        // eleCell.style.height = `calc(100% / ${side})`;
         eleContainer.append(eleCell);
         // aggiungere l'event listener alla cella appena creata
         eleCell.addEventListener('click', function () {
@@ -61,4 +48,16 @@ function createGrid(nCells, eleContainer) {
             this.classList.toggle('clicked');
         });
     }
+}
+
+//Genero 16 numeri casuali
+getRandom(1, 100, numRandom)
+function getRandom (min, max, numbers) {
+    while (numbers.length < 16) {
+      let randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
+      if (!numbers.includes(randomNumber)) {
+    numbers.push(randomNumber);
+  }
+}
+console.log(numbers);
 }
