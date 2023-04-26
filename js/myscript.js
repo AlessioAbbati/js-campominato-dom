@@ -46,15 +46,26 @@ function createGrid(nCells, eleContainer) {
         eleContainer.append(eleCell);
         // aggiungere l'event listener alla cella appena creata
         eleCell.addEventListener('click', function () {
+            getRandom(1, 100, numRandom)
+            function getRandom(min, max, numbers) {
+                while (numbers.length < 16) {
+                    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    if (!numbers.includes(randomNumber)) {
+                        numbers.push(randomNumber);
+                    } console.log(numbers);
+                } return
+                
+            }
             console.log(this);
             if (numRandom.includes(i)) {
                 console.log('Hai perso');
                 this.classList.toggle('bombs');
                 eleText.classList.add('text');
-                setTimeout(function(){alert("Hai perso!")
-                location.reload();
+                setTimeout(function () {
+                    alert("Hai perso!")
+                    location.reload();
                 }, 100);
-                
+
             } else {
                 this.classList.toggle('clicked');
                 this.classList.toggle('blue');
@@ -63,19 +74,30 @@ function createGrid(nCells, eleContainer) {
                 elePoint.innerHTML = point;
             }
 
-            
+
         });
     }
 }
 
 //Genero 16 numeri casuali
-getRandom(1, 100, numRandom)
-function getRandom(min, max, numbers) {
-    while (numbers.length < 16) {
-        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (!numbers.includes(randomNumber)) {
-            numbers.push(randomNumber);
-        }
-    }
-    console.log(numbers);
-}
+// getRandom(1, 100, numRandom)
+// function getRandom(min, max, numbers) {
+//     while (numbers.length < 16) {
+//         let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+//         if (!numbers.includes(randomNumber)) {
+//             numbers.push(randomNumber);
+//         }
+//     }
+//     console.log(numbers);
+// }
+
+// getRandom(1, 81, numRandom)
+// function getRandom(min, max, numbers) {
+//     while (numbers.length < 16) {
+//         let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+//         if (!numbers.includes(randomNumber)) {
+//             numbers.push(randomNumber);
+//         }
+//     }
+//     console.log(numbers);
+// }
