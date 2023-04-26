@@ -47,21 +47,23 @@ function createGrid(nCells, eleContainer) {
         // aggiungere l'event listener alla cella appena creata
         eleCell.addEventListener('click', function () {
             console.log(this);
-            // console.log('Hai cliccato ls cella ' + this.innerHTML)
-            // this.classList.toggle('clicked');
             if (numRandom.includes(i)) {
-                console.log('Hai perso')
+                console.log('Hai perso');
                 this.classList.toggle('bombs');
-                eleText.classList.add('text')
-            }
-
-            else {
+                eleText.classList.add('text');
+                setTimeout(function(){alert("Hai perso!")
+                location.reload();
+                }, 100);
+                
+            } else {
                 this.classList.toggle('clicked');
                 this.classList.toggle('blue');
                 point++;
                 console.log(point);
                 elePoint.innerHTML = point;
             }
+
+            
         });
     }
 }
