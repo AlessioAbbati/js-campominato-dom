@@ -16,6 +16,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: calc(100vh - 6rem);
     background-color: #7FFFD4;
 }
@@ -53,10 +54,17 @@ footer {
     background-color: aqua;
 }
 
-.bomb {
+.bombs {
     background-color: red;
 }
 
+.text{
+    display: block;
+    text-align: center;
+}
+.text-lose{
+    display: none;
+}
 .hidden {
     display: none;
 }

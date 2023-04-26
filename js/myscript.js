@@ -3,7 +3,10 @@ const eleHelp = document.querySelector('.help');
 const eleGrid = document.querySelector('.grid');
 const btnPlay = document.querySelector('#play');
 const selectLevel = document.querySelector('#level');
+const elePoint = document.querySelector('.point-user');
+const eleText = document.querySelector('.text-lose');
 const numRandom = []
+let point = 0;
 
 btnPlay.addEventListener('click', function () {
     // nascondere il messaggio
@@ -44,8 +47,21 @@ function createGrid(nCells, eleContainer) {
         // aggiungere l'event listener alla cella appena creata
         eleCell.addEventListener('click', function () {
             console.log(this);
-            console.log('Hai cliccato ls cella ' + this.innerHTML)
-            this.classList.toggle('clicked');
+            // console.log('Hai cliccato ls cella ' + this.innerHTML)
+            // this.classList.toggle('clicked');
+            if(numRandom.includes(i + 1)){
+                console.log('Hai perso')
+                this.classList.toggle('bombs');
+                eleText.classList.add('text')
+            }
+
+             else{
+                this.classList.toggle('clicked');
+                this.classList.toggle('blue');
+                point++;
+                console.log(point);
+                elePoint.innerHTML = point;
+            }
         });
     }
 }
