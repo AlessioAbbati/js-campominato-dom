@@ -53,6 +53,10 @@ footer {
     background-color: aqua;
 }
 
+.bomb {
+    background-color: red;
+}
+
 .hidden {
     display: none;
 }
